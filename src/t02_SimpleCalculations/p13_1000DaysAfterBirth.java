@@ -1,6 +1,7 @@
 package t02_SimpleCalculations;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class p13_1000DaysAfterBirth {
@@ -8,9 +9,12 @@ public class p13_1000DaysAfterBirth {
         Scanner scan = new Scanner(System.in);
         String birthDate = scan.nextLine();
 
-        LocalDate parsedBirthDate = LocalDate.parse(birthDate);
-        parsedBirthDate.plusDays(1000);
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate date = LocalDate.parse(birthDate, f);
+        date = date.plusDays(999);
 
-        System.out.println(parsedBirthDate);
+        date = LocalDate.parse(date.toString(), f);
+
+        System.out.println(date);
     }
 }
