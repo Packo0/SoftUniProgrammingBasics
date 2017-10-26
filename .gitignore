@@ -20,7 +20,4 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-t01_FirstStepInCoding/*.iml
-t01_FirstStepInCoding/.idea/**/*
-t02_SimpleCalculations/*.iml
-t02_SimpleCalculations/.idea/**/*
+.idea/**/*
