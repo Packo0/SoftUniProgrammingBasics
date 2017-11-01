@@ -28,7 +28,7 @@ public class p15_Trip {
             System.out.println("Somewhere in Europe");
 
             if (season.equals("summer")) {
-                System.out.printf("Camp - %.2f", money * 0.9);
+                System.out.printf("Hotel - %.2f", money * 0.9);
             } else {
                 System.out.printf("Hotel - %.2f", money * 0.9);
             }
