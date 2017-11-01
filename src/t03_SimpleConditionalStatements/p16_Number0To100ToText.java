@@ -7,44 +7,25 @@ public class p16_Number0To100ToText {
         Scanner scan = new Scanner(System.in);
         int num = Integer.parseInt(scan.nextLine());
 
+        String[] units = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+                "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+        String[] tens = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred"};
+
         int digitOne = num / 10;
         int digitTwo = num % 10;
 
-        if (digitOne == 0) {
-            switch (digitTwo) {
-                case 0:
-                    System.out.println("zero");
-                    break;
-                case 1:
-                    System.out.println("one");
-                    break;
-                case 2:
-                    System.out.println("two");
-                    break;
-                case 3:
-                    System.out.println("three");
-                    break;
-                case 4:
-                    System.out.println("four");
-                    break;
-                case 5:
-                    System.out.println("five");
-                    break;
-                case 6:
-                    System.out.println("six");
-                    break;
-                case 7:
-                    System.out.println("seven");
-                    break;
-                case 8:
-                    System.out.println("eight");
-                    break;
-                case 9:
-                    System.out.println("nine");
-                    break;
+        if (0 <= num && num <= 19) {
+            System.out.println(units[num]);
+        } else if (19 < num && num < 100) {
+            if (digitTwo == 0) {
+                System.out.println(tens[digitOne - 2]);
+            } else {
+                System.out.printf("%s %s", tens[digitOne - 2], units[digitTwo]);
             }
+        } else if(num == 100){
+            System.out.println("one hundred");
+        } else {
+            System.out.println("invalid number");
         }
-
-
     }
 }
