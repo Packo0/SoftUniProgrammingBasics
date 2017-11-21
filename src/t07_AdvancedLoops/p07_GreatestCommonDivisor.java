@@ -7,8 +7,13 @@ public class p07_GreatestCommonDivisor {
         Scanner scan = new Scanner(System.in);
         int a = Integer.parseInt(scan.nextLine());
         int b = Integer.parseInt(scan.nextLine());
-        int reminder;
 
+        while (b > 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
 
+        System.out.println(a);
     }
 }
