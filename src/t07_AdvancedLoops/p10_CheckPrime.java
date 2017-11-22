@@ -2,7 +2,7 @@ package t07_AdvancedLoops;
 
 import java.util.Scanner;
 
-public class t10_CheckPrime {
+public class p10_CheckPrime {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = Integer.parseInt(scan.nextLine());

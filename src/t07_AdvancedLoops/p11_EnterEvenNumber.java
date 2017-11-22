@@ -2,7 +2,7 @@ package t07_AdvancedLoops;
 
 import java.util.Scanner;
 
-public class t11_EnterEvenNumber {
+public class p11_EnterEvenNumber {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n;
