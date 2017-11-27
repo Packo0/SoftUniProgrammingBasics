@@ -12,50 +12,51 @@ public class p05_Crown {
 
         //top
         System.out.print("@");
-        System.out.print(repeatStr(" ", (width - 3) / 2));
+        System.out.print(repeatStr(" ", ((2 * n) - 4) / 2));
         System.out.print("@");
-        System.out.print(repeatStr(" ", (width - 3) / 2));
+        System.out.print(repeatStr(" ", ((2 * n) - 4) / 2));
         System.out.println("@");
 
-        //second row
+        //second
         System.out.print("**");
-        System.out.print(repeatStr(" ", (width - 4) / 2));
+        System.out.print(repeatStr(" ", ((2 * n) - 6) / 2));
         System.out.print("*");
-        System.out.print(repeatStr(" ", (width - 4) / 2));
+        System.out.print(repeatStr(" ", ((2 * n) - 6) / 2));
         System.out.println("**");
 
         int dots = 1;
-        int spaces = (width - 3) / 2 - 2;
+        int spaces = ((2 * n) - 10) / 2;
         int middle = 1;
-        for (int i = 0; i < height - 5; i++) {
-
-
-            if(i == height - 4) {
-                System.out.print("*");
-                System.out.print(repeatStr(".", dots));
-                System.out.print("*");
-                System.out.print(repeatStr(".", middle));
-                System.out.print("*");
-                System.out.print(repeatStr(".", dots));
-                System.out.println("*");
-            } else {
-                System.out.print("*");
-                System.out.print(repeatStr(".", dots));
-                System.out.print("*");
-                System.out.print(repeatStr(" ", spaces));
-                System.out.print("*");
-                System.out.print(repeatStr(".", middle));
-                System.out.print("*");
-                System.out.print(repeatStr(" ", spaces));
-                System.out.print("*");
-                System.out.print(repeatStr(".", dots));
-                System.out.println("*");
-            }
+        for (int i = 0; i < n / 2 - 2; i++) {
+            System.out.print("*");
+            System.out.print(repeatStr(".", dots));
+            System.out.print("*");
+            System.out.print(repeatStr(" ", spaces));
+            System.out.print("*");
+            System.out.print(repeatStr(".", middle));
+            System.out.print("*");
+            System.out.print(repeatStr(" ", spaces));
+            System.out.print("*");
+            System.out.print(repeatStr(".", dots));
+            System.out.println("*");
 
             dots++;
             middle += 2;
             spaces -= 2;
         }
+
+        int d = ((n * 2) - 1) - (((n / 2 - 1) * 2) + 4);
+        System.out.printf("*%s*%s*%s*%n",
+                repeatStr(".", n / 2 - 1),
+                repeatStr(".", d),
+                repeatStr(".", n / 2 - 1));
+
+        int bottomDot = (((2 * n) - 1) - (n + 3)) / 2;
+        System.out.printf("*%s%s.%s%s*%n",
+                repeatStr(".", n / 2),
+                repeatStr("*", bottomDot),
+                repeatStr("*", bottomDot),
+                repeatStr(".", n / 2));
 
         //bottom
         System.out.println(repeatStr("*", width));

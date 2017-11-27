@@ -15,35 +15,36 @@ public class p06_NumberGenerator {
         for (int i = m; i >= 1; i--) {
             for (int j = n; j >= 1; j--) {
                 for (int k = l; k >= 1; k--) {
-                    if(special >= control) {
-                        isReached = true;
-                    }
-
                     if ((i + j + k) % 3 == 0) {
                         special += 5;
-                    } else if (k % 5 == 0) {
+                    } else if (k == 5) {
                         special -= 2;
                     } else if (k % 2 == 0) {
                         special *= 2;
                     }
 
-
+                    if(special >= control) {
+                        isReached = true;
+                        break;
+                    }
                 }
 
                 if(special >= control) {
                     isReached = true;
+                    break;
                 }
             }
 
             if(special >= control) {
                 isReached = true;
+                break;
             }
         }
 
         if(isReached) {
             System.out.printf("Yes! Control number was reached! Current special number is %d.", special);
         } else {
-            System.out.printf("“No! %d is the last reached special number.", special);
+            System.out.printf("No! %d is the last reached special number.", special);
         }
     }
 }
