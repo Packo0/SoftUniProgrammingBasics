@@ -11,23 +11,39 @@ public class p06_NumberGenerator {
         int special = Integer.parseInt(scan.nextLine());
         int control = Integer.parseInt(scan.nextLine());
 
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                for (int k = 1; k <= l; k++) {
-                    if ((i + j + k) % 3 == 0) {
-                        special += 2;
+        boolean isReached = false;
+        for (int i = m; i >= 1; i--) {
+            for (int j = n; j >= 1; j--) {
+                for (int k = l; k >= 1; k--) {
+                    if(special >= control) {
+                        isReached = true;
                     }
 
-                    if (k % 2 == 0) {
+                    if ((i + j + k) % 3 == 0) {
+                        special += 5;
+                    } else if (k % 5 == 0) {
+                        special -= 2;
+                    } else if (k % 2 == 0) {
                         special *= 2;
                     }
 
-                    if (k % 5 == 0) {
-                        special -= 2;
-                    }
 
                 }
+
+                if(special >= control) {
+                    isReached = true;
+                }
             }
+
+            if(special >= control) {
+                isReached = true;
+            }
+        }
+
+        if(isReached) {
+            System.out.printf("Yes! Control number was reached! Current special number is %d.", special);
+        } else {
+            System.out.printf("“No! %d is the last reached special number.", special);
         }
     }
 }
