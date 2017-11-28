@@ -1,4 +1,4 @@
-package t08_ExamPreparations.e11_20_November_2017_Evening;
+package t08_ExamPreparations.e11_20_November_2017_Morning;
 
 import java.util.Scanner;
 
