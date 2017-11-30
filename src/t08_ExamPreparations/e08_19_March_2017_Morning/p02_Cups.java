@@ -9,5 +9,14 @@ public class p02_Cups {
         int numberOfWorkers = Integer.parseInt(scan.nextLine());
         int workingDays = Integer.parseInt(scan.nextLine());
 
+        int hours = 8 * numberOfWorkers * workingDays;
+        double cups = hours / 5;
+
+        double difference = Math.abs(cups - numberOfCups);
+        if (cups < numberOfCups) {
+            System.out.printf("Losses: %.2f", difference * 4.2);
+        } else {
+            System.out.printf("%.2f extra money", difference * 4.2);
+        }
     }
 }
