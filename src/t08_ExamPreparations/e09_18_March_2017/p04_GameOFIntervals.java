@@ -17,7 +17,7 @@ public class p04_GameOFIntervals {
         for (int i = 0; i < moves; i++) {
             int currentNumber = Integer.parseInt(scan.nextLine());
 
-            if(currentNumber < 0){
+            if(currentNumber < 0 || currentNumber > 50){
                 interval6++;
                 score /= 2;
                 continue;
